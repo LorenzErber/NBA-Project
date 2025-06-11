@@ -1,1 +1,11 @@
-<p>homesite works!</p>
+@for (item of players; track $index) {
+    <mat-card-content>
+                {{item.Firstname}} {{item.Lastname}}
+
+            </mat-card-content>
+            <mat-card-actions>
+                <a [routerLink]="['/details',item.id]">More Info</a>
+            </mat-card-actions>
+            <br>
+}
+
