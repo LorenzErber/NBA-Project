@@ -2,6 +2,8 @@ export interface Player {
     id:Number;
     Firstname:String;
     Lastname:String;
-    Bild?: String;
+    photo?: String;
     position:String;
+    team:String;
+    number:Number;
 }
