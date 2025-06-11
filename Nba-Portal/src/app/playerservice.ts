@@ -21,4 +21,7 @@ export class Playerservice {
       { Firstname: "Kawhi", Lastname: "Leonard", id: 11, team: "Clippers", number: 2, position: "SF" }
     ]
   }
+  getPlayers():Player[]{
+    return this.players;
+  }
 }
