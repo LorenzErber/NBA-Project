@@ -24,4 +24,13 @@ export class Playerservice {
   getPlayers():Player[]{
     return this.players;
   }
+  getPlayerbyId(id:Number):Player | undefined{
+     
+    return this.getPlayers().find((element) => {
+      return element.id == id
+    }
+    )
+     
+  }
+  
 }
