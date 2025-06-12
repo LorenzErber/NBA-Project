@@ -4,12 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { Player } from '../player';
 import { routes } from '../app.routes';
 import { Playerservice } from '../playerservice';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-playerdetails',
-  imports: [MatCard, MatCardActions, MatCardModule],
+  imports: [MatCard, MatCardActions, MatCardModule,RouterLink],
   templateUrl: './playerdetails.html',
   styleUrl: './playerdetails.css'
 })

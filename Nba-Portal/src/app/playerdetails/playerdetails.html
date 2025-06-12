@@ -2,18 +2,20 @@
   <mat-card class="profile-card">
     <mat-card-header>
       <mat-card-title>{{ p?.Firstname }} {{ p?.Lastname }}</mat-card-title>
-      <mat-card-subtitle>Position: {{ p?.position }}</mat-card-subtitle>
+      
     </mat-card-header>
 
     <mat-card-content>
       <div class="profile-info">
+        <p ><strong>Position: </strong>{{ p?.position }}</p>
         <p><strong>Rückennummer:</strong> {{ p?.number }}</p>
         <p><strong>Team:</strong> {{ p?.team }}</p>
       </div>
     </mat-card-content>
 
     <mat-card-actions >
-      <button mat-raised-button color="primary" routerLink="/players">Zurück zur Übersicht</button>
+        <a [routerLink]="['']">
+      <button mat-raised-button color="primary" >Zurück zur Übersicht</button></a>
     </mat-card-actions>
   </mat-card>
 </div>
