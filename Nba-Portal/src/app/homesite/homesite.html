@@ -1,7 +1,7 @@
 <div class="header-section">
   <img src="https://logodix.com/logo/314945.jpg" alt="NBA Logo" class="main-logo">
   <input placeholder="Filter By" type="text" #filter>
-    <button mat-button> Filter </button>
+    <button mat-button (click)="getPlayerByFilter(filter.value)"> Filter </button>
 </div>
 <div class="players-container">
   <div class="cards-container">

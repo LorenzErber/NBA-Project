@@ -53,4 +53,18 @@ export class Playerservice {
 
   }
 
+  GetPlayerBy(filter: string) : Player[]
+  {
+    let playersorted: Player[] = [];
+     if(filter.length == 0){return this.players}
+    else
+    {
+      playersorted = [...playersorted,...this.players.filter((element) =>  element.Firstname.toLocaleLowerCase() == filter.toLocaleLowerCase())];
+      playersorted = [...playersorted,...this.players.filter((element) =>  element.Lastname.toLocaleLowerCase() == filter.toLocaleLowerCase())];
+      playersorted = [...playersorted,...this.players.filter((element) =>  element.number == Number(filter.toLocaleLowerCase()))];
+      playersorted = [...playersorted,...this.players.filter((element) =>  element.team.toLocaleLowerCase()  == filter.toLocaleLowerCase())];
+      playersorted = [...playersorted,...this.players.filter((element) =>  element.position.toLocaleLowerCase() == filter.toLocaleLowerCase())];
+    }
+    return playersorted;
+  }
 }
