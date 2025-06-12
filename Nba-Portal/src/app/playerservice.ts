@@ -18,19 +18,39 @@ export class Playerservice {
       { Firstname: "Joel", Lastname: "Embiid", id: 8, team: "76ers", number: 21, position: "C" },
       { Firstname: "Devin", Lastname: "Booker", id: 9, team: "Suns", number: 1, position: "SG" },
       { Firstname: "Jimmy", Lastname: "Butler", id: 10, team: "Heat", number: 22, position: "SF" },
-      { Firstname: "Kawhi", Lastname: "Leonard", id: 11, team: "Clippers", number: 2, position: "SF" }
-    ]
+      { Firstname: "Kawhi", Lastname: "Leonard", id: 11, team: "Clippers", number: 2, position: "SF" },
+      { Firstname: "Anthony", Lastname: "Davis", id: 12, team: "Lakers", number: 3, position: "PF" },
+      { Firstname: "Damian", Lastname: "Lillard", id: 13, team: "Bucks", number: 0, position: "PG" },
+      { Firstname: "Ja", Lastname: "Morant", id: 14, team: "Grizzlies", number: 12, position: "PG" },
+      { Firstname: "Zion", Lastname: "Williamson", id: 15, team: "Pelicans", number: 1, position: "PF" },
+      { Firstname: "Paul", Lastname: "George", id: 16, team: "Clippers", number: 13, position: "SF" },
+      { Firstname: "Donovan", Lastname: "Mitchell", id: 17, team: "Cavaliers", number: 45, position: "SG" },
+      { Firstname: "Shai", Lastname: "Gilgeous-Alexander", id: 18, team: "Thunder", number: 2, position: "PG" },
+      { Firstname: "Tyrese", Lastname: "Haliburton", id: 19, team: "Pacers", number: 0, position: "PG" },
+      { Firstname: "Victor", Lastname: "Wembanyama", id: 20, team: "Spurs", number: 1, position: "C" },
+      { Firstname: "Paolo", Lastname: "Banchero", id: 21, team: "Magic", number: 5, position: "PF" },
+      { Firstname: "Scottie", Lastname: "Barnes", id: 22, team: "Raptors", number: 4, position: "SF" },
+      { Firstname: "Franz", Lastname: "Wagner", id: 23, team: "Magic", number: 22, position: "SF" },
+      { Firstname: "Alperen", Lastname: "Sengun", id: 24, team: "Rockets", number: 28, position: "C" },
+      { Firstname: "Evan", Lastname: "Mobley", id: 25, team: "Cavaliers", number: 4, position: "PF" },
+      { Firstname: "Cade", Lastname: "Cunningham", id: 26, team: "Pistons", number: 2, position: "PG" },
+      { Firstname: "Jalen", Lastname: "Green", id: 27, team: "Rockets", number: 4, position: "SG" },
+      { Firstname: "Anthony", Lastname: "Edwards", id: 28, team: "Timberwolves", number: 5, position: "SG" },
+      { Firstname: "Karl-Anthony", Lastname: "Towns", id: 29, team: "Knicks", number: 32, position: "C" },
+      { Firstname: "Mikal", Lastname: "Bridges", id: 30, team: "Knicks", number: 25, position: "SF" }
+    ];
   }
-  getPlayers():Player[]{
+
+  getPlayers(): Player[] {
     return this.players;
   }
-  getPlayerbyId(id:Number):Player | undefined{
-     
+  getPlayerbyId(id: Number): Player | undefined {
+
     return this.getPlayers().find((element) => {
       return element.id == id
     }
     )
-     
+
   }
-  
+
 }
