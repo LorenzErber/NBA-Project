@@ -1,1 +1,29 @@
-<p>homesite works!</p>
+<div class="header-section">
+  <img src="https://logodix.com/logo/314945.jpg" alt="NBA Logo" class="main-logo">
+  <input placeholder="Filter By" type="text" #filter>
+    <button mat-button> Filter </button>
+</div>
+<div class="players-container">
+  <div class="cards-container">
+    <div class="player-cards">
+      @for (item of players; track $index) {
+      <mat-card class="player-card">
+        <img src="https://logodix.com/logo/314945.jpg" alt="NBA Mini Logo" class="card-mini-logo">
+        <mat-card-header>
+          <mat-card-title>{{ item.Firstname }} {{ item.Lastname }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>Spieler ID: {{ item.id }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [routerLink]="['/details', item.id]">
+            Mehr Info
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      }
+    </div>
+</div>
+
