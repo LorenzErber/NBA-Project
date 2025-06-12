@@ -1,21 +1,73 @@
-<div class="profile-container">
-  <mat-card class="profile-card">
-    <mat-card-header>
-      <mat-card-title>{{ p?.Firstname }} {{ p?.Lastname }}</mat-card-title>
-      
-    </mat-card-header>
+<!-- Header mit Suchleiste -->
+<div class="header-section">
+  <a [routerLink]="['/home']"> <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Logo"
+      class="main-logo"></a>
+  <div class="header-controls">
+    <input placeholder="Filter by" type="text" #filter (keyup)="getPlayerByFilter(filter.value)">
+    <button mat-button (click)="getPlayerByFilter(filter.value)">Filter</button>
+  </div>
+</div>
 
+<!-- Main Content Container -->
+<div class="player-profile-container">
+
+  <!-- Attribute Cards Container -->
+  <div class="attribute-cards-container">
+    <mat-card class="attribute-card">
+      <mat-card-content>
+        <div class="attribute-label">Position</div>
+        <div class="attribute-value">{{ p?.position }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="attribute-card">
+      <mat-card-content>
+        <div class="attribute-label">Rückennummer</div>
+        <div class="attribute-value">{{ p?.number }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="attribute-card">
+      <mat-card-content>
+        <div class="attribute-label">Team</div>
+        <div class="attribute-value">{{ p?.team }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="attribute-card">
+      <mat-card-content>
+        <div class="attribute-label">Größe</div>
+        <div class="attribute-value">{{ p?.height || 'N/A' }} ft</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Player Name Card -->
+  <mat-card class="player-name-card">
     <mat-card-content>
-      <div class="profile-info">
-        <p ><strong>Position: </strong>{{ p?.position }}</p>
-        <p><strong>Rückennummer:</strong> {{ p?.number }}</p>
-        <p><strong>Team:</strong> {{ p?.team }}</p>
+      <div class="player-name">{{ p?.Firstname }} {{ p?.Lastname }}</div>
+      <div class="nba-logo-mini">
+        <img src="{{p?.teamLogo}}" alt="NBA" class="mini-nba-logo">
       </div>
     </mat-card-content>
+  </mat-card>
 
-    <mat-card-actions >
-        <a [routerLink]="['']">
-      <button mat-raised-button color="primary" >Zurück zur Übersicht</button></a>
+  <!-- Player Image Container -->
+  <mat-card class="player-image-card">
+    <mat-card-content>
+      <img src="{{p?.photo}}" alt="Player Image" class="player-image">
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Back Button -->
+  <mat-card class="back-button-card">
+    <mat-card-actions>
+      <a [routerLink]="['']">
+        <button mat-raised-button color="primary" class="back-button">
+          Zurück zur Übersicht
+        </button>
+      </a>
     </mat-card-actions>
   </mat-card>
+
 </div>

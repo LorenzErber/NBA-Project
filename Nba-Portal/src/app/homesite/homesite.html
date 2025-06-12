@@ -1,20 +1,23 @@
 <div class="header-section">
-  <img src="https://logodix.com/logo/314945.jpg" alt="NBA Logo" class="main-logo">
-  <input placeholder="Filter By" type="text" #filter>
-    <button mat-button (click)="getPlayerByFilter(filter.value)"> Filter </button>
+  <a [routerLink]="['/home']"> <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Logo" class="main-logo"></a>
+  <div class="header-controls">
+    <input placeholder="Filter by" type="text" #filter (keyup)="getPlayerByFilter(filter.value)">
+    <button mat-button (click)="getPlayerByFilter(filter.value)">Filter</button>
+  </div>
 </div>
+
 <div class="players-container">
   <div class="cards-container">
     <div class="player-cards">
       @for (item of players; track $index) {
       <mat-card class="player-card">
-        <img src="https://logodix.com/logo/314945.jpg" alt="NBA Mini Logo" class="card-mini-logo">
+        <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Mini Logo" class="card-mini-logo">
         <mat-card-header>
           <mat-card-title>{{ item.Firstname }} {{ item.Lastname }}</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
-          <p>Team: {{ item.team }}</p>
+          <p> <img class="img-teamlogo" src="{{item.photo}}"></p>
         </mat-card-content>
 
         <mat-card-actions>

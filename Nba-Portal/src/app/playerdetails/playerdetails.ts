@@ -14,11 +14,18 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   styleUrl: './playerdetails.css'
 })
 export class Playerdetails {
+
+
   p: Player|undefined;
   PlaSer: Playerservice = inject(Playerservice);
   route: ActivatedRoute=inject(ActivatedRoute);
   constructor() {
     this.p=this.PlaSer.getPlayerbyId(Number(this.route.snapshot.params['id']));
+    
+  }
+
+  getPlayerByFilter(filter : string)
+  {
     
   }
 }
