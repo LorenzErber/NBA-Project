@@ -1,54 +1,61 @@
-<section>
-    <form [formGroup]="playerform">
-        <mat-form-field>
-            <mat-label for="firstname">
-                Firstname
-            </mat-label>
-            <input matInput id="firstname" formControlName="firstname">
-        </mat-form-field>
-        <p>
-            <mat-form-field>
-                <mat-label for="lastname">
-                    Lastname
-                </mat-label>
-                <input matInput id="lastname" formControlName="lastname">
-            </mat-form-field>
-        </p>
-        <mat-form-field>
-            <mat-label for="number">
-                Number
-            </mat-label>
-            <input matInput id="number" formControlName="number" type="number" min=0>
-        </mat-form-field>
+<section class="player-form-container">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h2 class="form-title">Spieler erstellen</h2>
+            <div class="placeholder-image">
+                <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="Player Image" class="player-img">
+            </div>
+        </div>
+        
+        <form [formGroup]="playerform" class="player-form">
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Vorname</mat-label>
+                    <input matInput id="firstname" formControlName="firstname" placeholder="Vorname eingeben">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Nachname</mat-label>
+                    <input matInput id="lastname" formControlName="lastname" placeholder="Nachname eingeben">
+                </mat-form-field>
+            </div>
 
-        <mat-form-field>
-            <mat-label for="team">
-                Team
-            </mat-label>
-            <input matInput id="team" formControlName="team">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label for="height">
-                Height
-            </mat-label>
-            <input matInput id="height" formControlName="height">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label for="position">
-                Position
-            </mat-label>
-            <input matInput id="position" formControlName="position">
-        </mat-form-field>
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Trikotnummer</mat-label>
+                    <input matInput id="number" formControlName="number" type="number" min="0" max="99" placeholder="0-99">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Team</mat-label>
+                    <input matInput id="team" formControlName="team" placeholder="Team eingeben">
+                </mat-form-field>
+            </div>
 
-    </form>
+            <div class="form-row">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Größe</mat-label>
+                    <input matInput id="height" formControlName="height" placeholder="z.B. 6'8&quot;">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Position</mat-label>
+                    <input matInput id="position" formControlName="position" placeholder="z.B. Point Guard">
+                </mat-form-field>
+            </div>
+        </form>
+
+        <div class="button-container">
+            <button mat-raised-button color="primary" class="create-btn" (click)="safenewPlayer()">
+                <mat-icon>add</mat-icon>
+                Spieler erstellen
+            </button>
+            <a [routerLink]="['']">
+                <button mat-stroked-button class="cancel-btn">
+                    <mat-icon>close</mat-icon>
+                    Abbrechen
+                </button>
+            </a>
+        </div>
+    </div>
 </section>
-
-
-
-
-
-
-<a [routerLink]="['']">
-    <button mat-button (click)="safenewPlayer()">Create</button>
-    <button mat-button>Cancel</button>
-</a>

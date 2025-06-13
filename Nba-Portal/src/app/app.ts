@@ -7,7 +7,7 @@ import { Player } from './player';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,AddPlayer],
+  imports: [RouterOutlet,AddPlayer, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
