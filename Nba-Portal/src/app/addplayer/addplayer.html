@@ -1,0 +1,54 @@
+<section>
+    <form [formGroup]="playerform">
+        <mat-form-field>
+            <mat-label for="firstname">
+                Firstname
+            </mat-label>
+            <input matInput id="firstname" formControlName="firstname">
+        </mat-form-field>
+        <p>
+            <mat-form-field>
+                <mat-label for="lastname">
+                    Lastname
+                </mat-label>
+                <input matInput id="lastname" formControlName="lastname">
+            </mat-form-field>
+        </p>
+        <mat-form-field>
+            <mat-label for="number">
+                Number
+            </mat-label>
+            <input matInput id="number" formControlName="number" type="number" min=0>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label for="team">
+                Team
+            </mat-label>
+            <input matInput id="team" formControlName="team">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="height">
+                Height
+            </mat-label>
+            <input matInput id="height" formControlName="height">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="position">
+                Position
+            </mat-label>
+            <input matInput id="position" formControlName="position">
+        </mat-form-field>
+
+    </form>
+</section>
+
+
+
+
+
+
+<a [routerLink]="['']">
+    <button mat-button (click)="safenewPlayer()">Create</button>
+    <button mat-button>Cancel</button>
+</a>
