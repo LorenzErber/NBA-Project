@@ -26,7 +26,7 @@ export class Playerservice {
 
   GetPlayerBy(filter: string): Player[] {
     let playersorted: Player[] = [];
-    if (filter.length == 0) { return this.players; }
+    //if (filter.length == 0) { return this.players; }
 
     this.players.forEach(player => {
       const hasMatch = Object.values(player).some(value => 

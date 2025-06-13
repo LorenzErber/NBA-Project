@@ -24,6 +24,6 @@ constructor(){
 
 getPlayerByFilter(filter : string)
   {
-    this.players = this.ps.GetPlayerBy(filter)
+    this.players = this.ps.GetPlayerBy(filter);
   }
 }
