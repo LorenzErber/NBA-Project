@@ -1,14 +1,3 @@
-<!-- Header mit Suchleiste -->
-<div class="header-section">
-  <a [routerLink]="['/home']"> <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Logo"
-      class="main-logo"></a>
-  <div class="header-controls">
-    <a [routerLink]="['/home']"><input placeholder="Filter by" type="text" #filter
-        (keyup)="getPlayerByFilter(filter.value)"> </a>
-    <button mat-button (click)="getPlayerByFilter(filter.value)">Filter</button>
-  </div>
-</div>
-
 <!-- Main Content Container -->
 <div class="player-profile-container">
 

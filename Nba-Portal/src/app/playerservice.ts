@@ -7,6 +7,7 @@ import {players} from './playerservice-list'
 })
 export class Playerservice {
   players: Player[] = players;
+  filter : string = '';
   constructor() {
     
     
@@ -24,7 +25,9 @@ export class Playerservice {
     )
   }
 
-  GetPlayerBy(filter: string): Player[] {
+  GetPlayerBy(filter: string): Player[] { 
+    this.filter = filter;
+    
     let playersorted: Player[] = [];
     //if (filter.length == 0) { return this.players; }
 
@@ -36,7 +39,7 @@ export class Playerservice {
         playersorted.push(player);
       }
     });
-    return playersorted;
+    return  playersorted;
   }
   newPlayer(p: Player) {
     this.players.push(p);

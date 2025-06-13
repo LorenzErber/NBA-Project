@@ -7,9 +7,11 @@ import { Player } from '../player';
 import { RouterLink } from '@angular/router';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 
+import { MatIcon } from '@angular/material/icon';
+
 @Component({
   selector: 'app-addplayer',
-  imports: [ReactiveFormsModule, MatInputModule, MatButtonModule, RouterLink, MatSelect, MatSelectModule],
+  imports: [ReactiveFormsModule, MatInputModule, MatButtonModule, RouterLink, MatSelect, MatSelectModule, MatIcon],
   templateUrl: './addplayer.html',
   styleUrl: './addplayer.css'
 })

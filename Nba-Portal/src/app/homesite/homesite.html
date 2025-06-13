@@ -1,15 +1,8 @@
-<div class="header-section">
-  <a [routerLink]="['/home']"> <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Logo" class="main-logo"></a>
-  <div class="header-controls">
-    <input placeholder="Filter by" type="text" #filter (keyup)="getPlayerByFilter(filter.value)">
-    <button mat-button (click)="getPlayerByFilter(filter.value)">Filter</button>
-  </div>
-</div>
 
 <div class="players-container">
   <div class="cards-container">
     <div class="player-cards">
-      @for (item of players; track $index) {
+      @for (item of ps.GetPlayerBy(ps.filter); track $index) {
       <mat-card class="player-card">
         <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Mini Logo" class="card-mini-logo">
         <mat-card-header>
