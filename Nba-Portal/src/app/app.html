@@ -1,3 +1,12 @@
+<div class="header-section">
+  <a [routerLink]="['/home']"> <img src="https://cdn.worldvectorlogo.com/logos/nba-6.svg" alt="NBA Logo" class="main-logo"></a>
+  <div class="header-controls">
+    <input placeholder="Filter by" type="text" #filter (keyup)="hs.getPlayerByFilter(filter.value)">
+    <button mat-button (click)="hs.getPlayerByFilter(filter.value)">Filter</button>
+    <a [routerLink]="['/addPlayer']"><button mat-button>Spieler Erstellen</button></a>
+  </div>
+</div>
+
 <div>
     <router-outlet></router-outlet>
- </div>
+</div>

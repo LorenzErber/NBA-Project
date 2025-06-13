@@ -1,12 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Injectable } from '@angular/core';
 import { Playerservice } from '../playerservice';
 import { Player } from '../player';
 import{MatCardModule} from '@angular/material/card';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import{FormGroup, FormControl, ReactiveFormsModule, FormControlDirective} from '@angular/forms';
 import {MatFormField, MatInputModule} from '@angular/material/input';
 import {MatSelect, MatSelectModule} from '@angular/material/select'
 
+@Injectable({
+  providedIn: 'root'  
+})
 @Component({
   selector: 'app-homesite',
   imports: [MatCardModule,RouterLink,MatInputModule,MatSelectModule],
@@ -17,6 +20,7 @@ import {MatSelect, MatSelectModule} from '@angular/material/select'
 export class Homesite {
 players:Player[];
 ps:Playerservice=inject(Playerservice);
+route: ActivatedRoute=inject(ActivatedRoute);
 constructor(){
   this.players=this.ps.getPlayers();
 }
@@ -24,6 +28,6 @@ constructor(){
 
 getPlayerByFilter(filter : string)
   {
-    this.players = this.ps.GetPlayerBy(filter)
+    this.players = this.ps.GetPlayerBy(filter);
   }
 }
