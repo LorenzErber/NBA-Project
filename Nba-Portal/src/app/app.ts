@@ -18,6 +18,8 @@ export class App {
 
 
   hs : Homesite = inject(Homesite);
+
+  
 }
 
 
